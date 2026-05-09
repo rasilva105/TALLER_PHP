@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/Fibonacci.php");
+require_once __DIR__ . "/../models/fibonacci.php";
 
 $resultado=[];
 
@@ -22,4 +22,4 @@ if($_POST){
     }
 }
 
-require_once("../views/fibonacci.php");
+require_once __DIR__ . "/../views/fibonacci.php";

@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/Calculadora.php");
+require_once __DIR__ . "/../models/Calculadora.php";
 
 $resultado="";
 
@@ -35,4 +35,4 @@ if(file_exists("../data/historial.json")){
     $historial=json_decode(file_get_contents("../data/historial.json"),true);
 }
 
-require_once("../views/calculadora.php");
+require_once __DIR__ . "/../views/calculadora.php";

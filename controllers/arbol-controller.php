@@ -1,5 +1,5 @@
 <?php
-require_once("../models/arbol.php");
+require_once __DIR__ . "/../models/arbol.php";
 $resultado = "";
 
 if ($_POST) {
@@ -9,4 +9,4 @@ if ($_POST) {
     $resultado = "Preorden: $pre <br> Inorden: $in <br> (Construcción básica)";
 }
 
-include("../views/arbol_view.php");
+include(__DIR__ . "/../views/arbol_view.php");

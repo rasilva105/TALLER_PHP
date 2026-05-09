@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/Estadistica.php");
+require_once __DIR__ . "/../models/Estadistica.php";
 
 $promedio="";
 $media="";
@@ -19,4 +19,4 @@ if($_POST){
     $moda = $modelo->moda($numeros);
 }
 
-require_once("../views/estadistica.php");
+require_once __DIR__ . "/../views/estadistica.php";

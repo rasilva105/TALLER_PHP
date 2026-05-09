@@ -1,6 +1,6 @@
 <?php
 
-require_once("../models/Acronimo.php");
+require_once __DIR__ . "/../models/Acronimo.php";
 
 class AcronimoController {
 
@@ -15,6 +15,6 @@ class AcronimoController {
             $resultado = $modelo->generar($_POST['texto']);
         }
 
-        require_once("../views/acronimo.php");
+        require_once __DIR__ . "/../views/acronimo.php";
     }
 }

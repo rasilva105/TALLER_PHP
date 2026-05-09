@@ -2,21 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Aplicaciones PHP</title>
+    <title>Aplicaciones PHP - MVC</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h1>Aplicaciones en PHP - POO</h1>
+<h1>Aplicaciones en PHP - POO MVC</h1>
 
 <div class="menu">
-    <a href="pages/acronimo.php">1. Acrónimo</a>
-    <a href="pages/fibonacci_factorial.php">2. Fibonacci / Factorial</a>
-    <a href="pages/estadistica.php">3. Promedio, Media y Moda</a>
-    <a href="pages/conjuntos.php">4. Operaciones con Conjuntos</a>
-    <a href="pages/binario.php">5. Decimal a Binario</a>
-    <a href="pages/arbol.php">6. Árbol Binario</a>
-    <a href="pages/calculadora.php">7. Calculadora</a>
+
+    <a href="controllers/AcronimoController.php">1. Acrónimo</a>
+
+    <a href="controllers/FibonacciController.php">2. Fibonacci / Factorial</a>
+
+    <a href="controllers/EstadisticaController.php">3. Promedio / Media / Moda</a>
+
+    <a href="controllers/ConjuntoController.php">4. Conjuntos</a>
+
+    <a href="controllers/BinarioController.php">5. Decimal a Binario</a>
+
+    <a href="controllers/CalculadoraController.php">7. Calculadora</a>
+
 </div>
 
 </body>
