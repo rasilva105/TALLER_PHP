@@ -1,11 +1,14 @@
 <?php
-require_once("../models/binario.php");
 
-$resultado = "";
+require_once("../models/Binario.php");
 
-if ($_POST) {
-    $num = $_POST['numero'];
-    $resultado = Binario::convertir($num);
+$resultado="";
+
+if($_POST){
+
+    $modelo = new Binario();
+
+    $resultado = $modelo->convertir($_POST['numero']);
 }
 
-include("../views/binario_view.php");
+require_once("../views/binario.php");

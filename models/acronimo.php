@@ -1,17 +1,16 @@
 <?php
-require_once("../models/acronimo.php");
 class Acronimo {
-    public static function generar($frase) {
-        $frase = preg_replace("/[^a-zA-Z\s-]/", "", $frase);
-        $frase = str_replace("-", " ", $frase);
-        $palabras = explode(" ", $frase);
+    public function generar($texto){
+        $texto = str_replace("-", " ", $texto);
+        $texto = preg_replace("/[^a-zA-Z ]/", "", $texto);
+        $palabras = explode(" ", $texto);
+        $resultado = "";
+        foreach($palabras as $palabra){
 
-        $acronimo = "";
-        foreach ($palabras as $p) {
-            if ($p != "") {
-                $acronimo .= strtoupper($p[0]);
+            if(!empty($palabra)){
+                $resultado .= strtoupper($palabra[0]);
             }
         }
-        return $acronimo;
+        return $resultado;
     }
 }

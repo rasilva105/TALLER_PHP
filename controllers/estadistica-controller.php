@@ -1,17 +1,22 @@
 <?php
-require_once("../models/estadistica.php");
 
-$resultado = "";
+require_once("../models/Estadistica.php");
 
-if ($_POST) {
-    $datos = explode(",", $_POST['numeros']);
-    $datos = array_map('floatval', $datos);
+$promedio="";
+$media="";
+$moda="";
 
-    $prom = Estadistica::promedio($datos);
-    $med = Estadistica::mediana($datos);
-    $mod = Estadistica::moda($datos);
+if($_POST){
 
-    $resultado = "Promedio: $prom | Mediana: $med | Moda: $mod";
+    $modelo = new Estadistica();
+
+    $numeros = explode(",", $_POST['numeros']);
+
+    $promedio = $modelo->promedio($numeros);
+
+    $media = $modelo->media($numeros);
+
+    $moda = $modelo->moda($numeros);
 }
 
-include("../views/estadistica_view.php");
+require_once("../views/estadistica.php");

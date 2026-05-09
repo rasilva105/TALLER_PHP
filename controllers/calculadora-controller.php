@@ -1,24 +1,38 @@
 <?php
-require_once("../models/calculadora.php");
 
-$resultado = "";
-$historial = Calculadora::obtenerHistorial();
+require_once("../models/Calculadora.php");
 
-if (isset($_POST['calcular'])) {
-    $a = $_POST['a'];
-    $b = $_POST['b'];
-    $op = $_POST['op'];
+$resultado="";
 
-    $resultado = Calculadora::operar($a, $b, $op);
+if($_POST){
 
-    Calculadora::guardarHistorial("$a $op $b = $resultado");
+    $modelo = new Calculadora();
 
-    $historial = Calculadora::obtenerHistorial();
+    $n1=$_POST['n1'];
+
+    $n2=$_POST['n2'];
+
+    $op=$_POST['operacion'];
+
+    $resultado=$modelo->calcular($n1,$n2,$op);
+
+    $historial=[];
+
+    if(file_exists("../data/historial.json")){
+
+        $historial=json_decode(file_get_contents("../data/historial.json"),true);
+    }
+
+    $historial[]="$n1 $op $n2 = $resultado";
+
+    file_put_contents("../data/historial.json",json_encode($historial));
 }
 
-if (isset($_POST['borrar'])) {
-    Calculadora::borrarHistorial();
-    $historial = "";
+$historial=[];
+
+if(file_exists("../data/historial.json")){
+
+    $historial=json_decode(file_get_contents("../data/historial.json"),true);
 }
 
-include("../views/calculadora_view.php");
+require_once("../views/calculadora.php");

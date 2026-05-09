@@ -1,5 +1,5 @@
 <?php
-
+require_once("../models/arbol.php");
 $resultado = "";
 
 if ($_POST) {

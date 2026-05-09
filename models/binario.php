@@ -1,6 +1,9 @@
 <?php
-class Binario {
-    public static function convertir($num){
-        return decbin($num);
+
+class Binario{
+
+    public function convertir($numero){
+
+        return decbin($numero);
     }
 }

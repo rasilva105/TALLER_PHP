@@ -1,7 +1,20 @@
 <?php
-require_once("../models/acronimo.php");
 
-if ($_POST) {
-    $frase = $_POST['frase'];
-    $resultado = Acronimo::generar($frase);
+require_once("../models/Acronimo.php");
+
+class AcronimoController {
+
+    public function procesar(){
+
+        $resultado="";
+
+        if($_POST){
+
+            $modelo = new Acronimo();
+
+            $resultado = $modelo->generar($_POST['texto']);
+        }
+
+        require_once("../views/acronimo.php");
+    }
 }

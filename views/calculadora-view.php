@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora</title>
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <h2>Calculadora</h2>
 
-<form method="post" action="../controllers/calculadora_controller.php">
+<form method="POST">
 
-    <input type="number" step="any" name="a" placeholder="Número 1" required>
-    <input type="number" step="any" name="b" placeholder="Número 2" required>
+<input type="number" step="any" name="n1">
 
-    <select name="op">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-        <option value="%">%</option>
-    </select>
+<input type="number" step="any" name="n2">
 
-    <button type="submit" name="calcular">Calcular</button>
-    <button type="submit" name="borrar">Borrar Historial</button>
+<select name="operacion">
+
+<option value="+">Suma</option>
+
+<option value="-">Resta</option>
+
+<option value="*">Multiplicación</option>
+
+<option value="/">División</option>
+
+<option value="%">Porcentaje</option>
+
+</select>
+
+<button>Calcular</button>
 
 </form>
 
-<p>Resultado: 
-<?php 
-    if (isset($resultado)) {
-        echo $resultado;
-    }
-?>
-</p>
+<h3>
+Resultado:
 
-<h3>Historial</h3>
-<pre>
-<?php 
-    if (isset($historial) && $historial != "") {
-        echo $historial;
-    } else {
-        echo "No hay historial";
-    }
+<?php
+if(isset($resultado)){
+    echo $resultado;
+}
 ?>
-</pre>
+
+</h3>
+
+<h2>Historial</h2>
+
+<?php
+
+if(isset($historial) && is_array($historial)){
+
+    foreach($historial as $h){
+
+        echo "<p>$h</p>";
+    }
+}
+?>
 
 <a href="../index.php">Volver</a>
 

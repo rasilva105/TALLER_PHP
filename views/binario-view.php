@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Binario</title>
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-<h2>Conversión a Binario</h2>
+<h2>Decimal a Binario</h2>
 
-<form method="post" action="../controllers/binario_controller.php">
-    <input type="number" name="numero">
-    <button type="submit">Convertir</button>
+<form method="POST">
+
+<input type="number" name="numero">
+
+<button>Convertir</button>
+
 </form>
 
-<p>Resultado: <?php echo $resultado; ?></p>
+<h3><?= $resultado ?></h3>
 
 <a href="../index.php">Volver</a>
 

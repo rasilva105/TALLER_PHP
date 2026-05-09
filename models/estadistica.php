@@ -1,18 +1,34 @@
 <?php
-class Estadistica {
 
-    public static function promedio($arr) {
-        return array_sum($arr)/count($arr);
+class Estadistica{
+
+    public function promedio($numeros){
+
+        return array_sum($numeros)/count($numeros);
     }
 
-    public static function mediana($arr) {
-        sort($arr);
-        $n = count($arr);
-        return $arr[intval($n/2)];
+    public function media($numeros){
+
+        sort($numeros);
+
+        $cantidad=count($numeros);
+
+        $mitad=floor($cantidad/2);
+
+        if($cantidad%2==0){
+
+            return ($numeros[$mitad-1]+$numeros[$mitad])/2;
+        }
+
+        return $numeros[$mitad];
     }
 
-    public static function moda($arr) {
-        $conteo = array_count_values($arr);
-        return array_search(max($conteo), $conteo);
+    public function moda($numeros){
+
+        $conteo=array_count_values($numeros);
+
+        arsort($conteo);
+
+        return array_key_first($conteo);
     }
 }
