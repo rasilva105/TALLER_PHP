@@ -11,4 +11,4 @@ if($_POST){
     $resultado = $modelo->convertir($_POST['numero']);
 }
 
-require_once __DIR__ . "/../views/binario.php";
+require_once __DIR__ . "/../views/binario-view.php";

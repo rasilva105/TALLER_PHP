@@ -24,4 +24,4 @@ if($_POST){
     $diferenciaBA = $modelo->diferenciaBA($a,$b);
 }
 
-require_once __DIR__ . "/../views/conjuntos.php";
+require_once __DIR__ . "/../views/conjuntos-view.php";

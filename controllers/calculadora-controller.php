@@ -35,4 +35,4 @@ if(file_exists("../data/historial.json")){
     $historial=json_decode(file_get_contents("../data/historial.json"),true);
 }
 
-require_once __DIR__ . "/../views/calculadora.php";
+require_once __DIR__ . "/../views/calculadora-view.php";

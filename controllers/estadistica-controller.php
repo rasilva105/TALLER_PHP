@@ -19,4 +19,4 @@ if($_POST){
     $moda = $modelo->moda($numeros);
 }
 
-require_once __DIR__ . "/../views/estadistica.php";
+require_once __DIR__ . "/../views/estadistica-view.php";

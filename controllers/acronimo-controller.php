@@ -1,20 +1,14 @@
 <?php
 
-require_once __DIR__ . "/../models/Acronimo.php";
+require_once __DIR__ . '/../models/acronimo.php';
 
-class AcronimoController {
+$model = new AcronimoModel();
 
-    public function procesar(){
+$resultado = "";
 
-        $resultado="";
-
-        if($_POST){
-
-            $modelo = new Acronimo();
-
-            $resultado = $modelo->generar($_POST['texto']);
-        }
-
-        require_once __DIR__ . "/../views/acronimo.php";
-    }
+if (isset($_POST['texto'])) {
+    $texto = $_POST['texto'];
+    $resultado = $model->generarAcronimo($texto);
 }
+
+require_once __DIR__ . '/../views/acronimo-view.php';

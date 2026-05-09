@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../assets/css/style.css">
+    <title>Acrónimo</title>
 </head>
 <body>
 
-<h2>Generador de Acrónimos</h2>
+<h1>Generador de Acrónimos</h1>
 
-<form method="POST">
-
-<input type="text" name="texto" required>
-
-<button>Generar</button>
-
+<form method="POST" action="">
+    <input type="text" name="texto" placeholder="Escribe una frase">
+    <button type="submit">Generar</button>
 </form>
 
-<h3><?= $resultado ?></h3>
-
-<a href="../index.php">Volver</a>
+<?php if (!empty($resultado)): ?>
+    <h2>Resultado: <?php echo $resultado; ?></h2>
+<?php endif; ?>
 
 </body>
 </html>
